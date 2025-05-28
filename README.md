@@ -27,3 +27,15 @@ A simple and intuitive emotion-based quotes app developed using Python, Kivy, an
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/feel-good-application.git
+
+2. Navigate to the project folder:
+   cd feel-good-application
+   
+4. Install required dependencies:
+   pip install kivy
+
+5. Run the application:
+   python main.py
+
+
+Created By:Ombir
