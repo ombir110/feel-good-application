@@ -1,0 +1,108 @@
+<BlueButton@Button>:
+    background_color: 0.2, 0.4, 0.8, 1
+    color: 1, 1, 1, 1
+    font_size: 16
+    bold: True
+    size_hint_y: None
+    height: 48
+    background_normal: ''
+    background_down: ''
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 15
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.3, 0.6, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Feel Good App"
+            font_size: 32
+            color: 1, 1, 1, 1
+            size_hint_y: None
+            height: 60
+
+        TextInput:
+            id: username
+            hint_text: "Username"
+            multiline: False
+            size_hint_y: None
+            height: 44
+
+        TextInput:
+            id: password
+            hint_text: "Password"
+            password: True
+            multiline: False
+            size_hint_y: None
+            height: 44
+
+        BlueButton:
+            text: "Login"
+            on_press: app.login(username.text, password.text)
+
+        BlueButton:
+            text: "Sign Up"
+            on_press: app.signup(username.text, password.text)
+
+        Label:
+            text: "Created by Ombir"
+            size_hint_y: None
+            height: 30
+            font_size: 12
+            color: 1, 1, 1, 0.6
+
+
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 0.9, 0.95, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Welcome to Your Journal"
+            font_size: 24
+            color: 0.1, 0.2, 0.4, 1
+            size_hint_y: None
+            height: 50
+
+        TextInput:
+            id: mood_input
+            hint_text: "How are you feeling today?"
+            size_hint_y: None
+            height: 40
+            multiline: False
+
+        TextInput:
+            id: journal_input
+            hint_text: "Write about your day..."
+            multiline: True
+            size_hint_y: 0.5
+
+        BlueButton:
+            text: "Save and Get Quote"
+            on_press: app.handle_mood(mood_input.text, journal_input.text)
+
+        Label:
+            id: quote_label
+            text: ""
+            font_size: 16
+            color: 0.1, 0.2, 0.4, 1
+
+        Label:
+            text: "Created by Ombir"
+            font_size: 12
+            color: 0.2, 0.3, 0.4, 0.6
+            size_hint_y: None
+            height: 30
